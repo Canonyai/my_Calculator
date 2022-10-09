@@ -36,18 +36,52 @@ def num_append(string):
     return int(curr), n
 
 
-def operation(string, num1, num2):
-    if string == '+':
-        return num1 + num2
-    if string == '-':
-        return num1 - num2
-    if string == '*':
-        return num1 * num2
-
-
 def operator(symbol):
     operations = ['+', '-', '*']
     if symbol in operations:
         return True
     return False
     # return symbol == '+' or symbol == '-' or symbol == '*'
+
+
+def operation(string, num1, num2):
+    if string == '+':
+        return num1 + num2  # defining operation functionality
+    if string == '-':
+        return num1 - num2
+    if string == '*':
+        return num1 * num2
+
+
+def print_string(chars):
+    print(chars + "=")
+
+
+negated = False  # by default, the first string is not negative
+string = input('')
+
+
+while True:  # begin combing through the string
+    try:
+        if string[0] == '-':  # for negative numbers
+            negated = True  # because here the numbers are in a string format
+            string = string[1:]  # focus on rest of string
+        number1 = num_append(string)[0]
+        if negated:
+            number1 = -number1
+            negate = False
+        end_number1 = num_append(string)[1]
+        string = string[end_number1:]
+        if string == '':
+            print(number1)  # print result
+            break
+        sym = string[0]  # get the operation symbol
+        string = string[1:]
+        number2 = num_append(string)[0]
+        end_number2 = num_append(string)[1]
+        result = operation(sym, number1, number2)  # carry out functionality
+        number1 = result  # obtain result of operation
+        string = str(number1) + string[end_number2:]  # replace nums1 and nums2 with result to track accuracy
+        print_string(string)  # print updated string
+    except:
+        break
