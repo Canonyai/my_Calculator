@@ -10,14 +10,27 @@ After the user inputs the string, the app will check if the string represents a 
 After validating the expression, the app will output a string containing the result.
  In case of invalid expression, it should output an appropriate error message.
 For simplicity, we will consider only addition, subtraction, and multiplication operations.
-Also, we will only consider integers. 
+Also, we will only consider integers.
 '''
 
 
 def Numbers(number):
-    #check if character is a number or symbol
-    nums=['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+    # check if character is a number or symbol
+    nums = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
     if number in nums:
         return True
-    # return number == '0' or number == '1' or number == '2' or number == '3' or number == '4' or number == '5' or number == '6' or number == '7' or number == '8' or number == '9'
+    # return number == '0' or number == '1' or number == '2' or number == '3' or number == '4' or number == '5' or
+    # number == '6' or number == '7' or number == '8' or number == '9'
     return False
+
+
+def num_append(string):
+    n = 0
+    curr = ''  # current number string
+    try:
+        while Numbers(string[n]):
+            curr += string[n]
+            n += 1
+    except:
+        pass
+    return int(curr), n
