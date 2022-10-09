@@ -32,5 +32,22 @@ def num_append(string):
             curr += string[n]
             n += 1
     except:
-        pass
+        pass  # ignore
     return int(curr), n
+
+
+def operation(string, num1, num2):
+    if string == '+':
+        return num1 + num2
+    if string == '-':
+        return num1 - num2
+    if string == '*':
+        return num1 * num2
+
+
+def operator(symbol):
+    operations = ['+', '-', '*']
+    if symbol in operations:
+        return True
+    return False
+    # return symbol == '+' or symbol == '-' or symbol == '*'
