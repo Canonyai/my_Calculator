@@ -32,7 +32,7 @@ def main():
             number1 = num_append(string)[0]
             if negated:
                 number1 = -number1
-                negate = False
+                negated = False
             end_number1 = num_append(string)[1]
             string = string[end_number1:]
             if string == '':
@@ -55,8 +55,7 @@ def numbers(number):
     nums = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
     if number in nums:
         return True
-    # return number == '0' or number == '1' or number == '2' or number == '3' or number == '4' or number == '5' or
-    # number == '6' or number == '7' or number == '8' or number == '9'
+
     return False
 
 
