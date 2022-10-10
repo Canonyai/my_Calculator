@@ -75,7 +75,7 @@ def num_append(string):
 def multiples(string):
     symbol_index = string.find("*")
 
-    # If there is no *' in the equation
+    # If there is no '*' in the equation
     if symbol_index == -1:
         return string
 
