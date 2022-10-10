@@ -3,7 +3,6 @@ from calculator import *
 import unittest
 
 
-# python -m unittest test
 class TestSum(unittest.TestCase):
 
     def test_addition(self):

@@ -75,7 +75,7 @@ def num_append(string):
 def multiples(string):
     symbol_index = string.find("*")
 
-    # If there is no * in the equation
+    # If there is no *' in the equation
     if symbol_index == -1:
         return string
 
@@ -122,7 +122,7 @@ def operation(string, num1, num2):
 
 
 def print_string(chars):
-    print(chars + "=")
+    print(chars + "=") # shows the level by level breakdown on what's going on
 
 
 if __name__ == '__main__':
